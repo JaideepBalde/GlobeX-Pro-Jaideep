@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaideep-GlobeX - Professional Utilities Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="logo">
+                <i class="fas fa-globe"></i>
+                <h1>Jaideep-GlobeX Pro</h1>
+            </div>
+            <div class="user-info">
+                <span id="currentTime"></span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-item active" data-section="overview">
+                <i class="fas fa-th-large"></i>
+                <span>Overview</span>
+            </div>
+            <div class="nav-item" data-section="scheduler">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Scheduler</span>
+            </div>
+            <div class="nav-item" data-section="resume">
+                <i class="fas fa-file-alt"></i>
+                <span>Resume</span>
+            </div>
+            <div class="nav-item" data-section="markdown">
+                <i class="fab fa-markdown"></i>
+                <span>Markdown</span>
+            </div>
+            <div class="nav-item" data-section="csv">
+                <i class="fas fa-table"></i>
+                <span>CSV Viewer</span>
+            </div>
+            <div class="nav-item" data-section="mindmap">
+                <i class="fas fa-project-diagram"></i>
+                <span>Mind Map</span>
+            </div>
+            <div class="nav-item" data-section="snippets">
+                <i class="fas fa-code"></i>
+                <span>Snippets</span>
+            </div>
+            <div class="nav-item" data-section="notes">
+                <i class="fas fa-lock"></i>
+                <span>Secure Notes</span>
+            </div>
+            <div class="nav-item" data-section="json">
+                <i class="fas fa-brackets-curly"></i>
+                <span>JSON Tools</span>
+            </div>
+            <div class="nav-item" data-section="kanban">
+                <i class="fas fa-tasks"></i>
+                <span>Kanban</span>
+            </div>
+            <div class="nav-item" data-section="compressor">
+                <i class="fas fa-compress"></i>
+                <span>Compressor</span>
+            </div>
+            <div class="nav-item" data-section="dictionary">
+                <i class="fas fa-book"></i>
+                <span>Dictionary</span>
+            </div>
+            <div class="nav-item" data-section="countries">
+                <i class="fas fa-flag"></i>
+                <span>Countries</span>
+            </div>
+            <div class="nav-item" data-section="calculator">
+                <i class="fas fa-calculator"></i>
+                <span>Calculator</span>
+            </div>
+            <div class="nav-item" data-section="weather">
+                <i class="fas fa-cloud-sun"></i>
+                <span>Weather</span>
+            </div>
+            <div class="nav-item" data-section="qr">
+                <i class="fas fa-qrcode"></i>
+                <span>QR Generator</span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="section active">
+                <div class="section-header">
+                    <h2>Professional Utilities Overview</h2>
+                    <p>Your complete toolkit for professional productivity</p>
+                </div>
+                <div class="utilities-grid">
+                    <div class="utility-card" data-section="scheduler">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Meeting Scheduler</h3>
+                        <p>Schedule meetings with timezone support</p>
+                        <div class="card-stats">
+                            <span id="schedulerCount">0 meetings</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="resume">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Resume Builder</h3>
+                        <p>Format and download your portfolio</p>
+                        <div class="card-stats">
+                            <span>Professional templates</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="markdown">
+                        <div class="card-icon">
+                            <i class="fab fa-markdown"></i>
+                        </div>
+                        <h3>Markdown Converter</h3>
+                        <p>Live markdown to HTML conversion</p>
+                        <div class="card-stats">
+                            <span>Real-time preview</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="csv">
+                        <div class="card-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h3>CSV Viewer</h3>
+                        <p>View, sort and search CSV files</p>
+                        <div class="card-stats">
+                            <span>Advanced filtering</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="mindmap">
+                        <div class="card-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Mind Map</h3>
+                        <p>Visual brainstorming with drag & drop</p>
+                        <div class="card-stats">
+                            <span>Interactive design</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="snippets">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Code Snippets</h3>
+                        <p>Manage code with tags & clipboard</p>
+                        <div class="card-stats">
+                            <span id="snippetCount">0 snippets</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="notes">
+                        <div class="card-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Secure Notes</h3>
+                        <p>Password-protected note taking</p>
+                        <div class="card-stats">
+                            <span>Encrypted storage</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="json">
+                        <div class="card-icon">
+                            <i class="fas fa-brackets-curly"></i>
+                        </div>
+                        <h3>JSON Tools</h3>
+                        <p>Beautify and validate JSON data</p>
+                        <div class="card-stats">
+                            <span>Format & validate</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="kanban">
+                        <div class="card-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Kanban Board</h3>
+                        <p>Drag & drop task management</p>
+                        <div class="card-stats">
+                            <span id="taskCount">0 tasks</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="compressor">
+                        <div class="card-icon">
+                            <i class="fas fa-compress"></i>
+                        </div>
+                        <h3>Image Compressor</h3>
+                        <p>Client-side image optimization</p>
+                        <div class="card-stats">
+                            <span>No upload needed</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="dictionary">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Dictionary</h3>
+                        <p>Word definitions and meanings</p>
+                        <div class="card-stats">
+                            <span>Instant lookup</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="countries">
+                        <div class="card-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <h3>Country Info</h3>
+                        <p>Complete information about all countries</p>
+                        <div class="card-stats">
+                            <span>195+ countries</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="calculator">
+                        <div class="card-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Calculator</h3>
+                        <p>Advanced scientific calculator</p>
+                        <div class="card-stats">
+                            <span>Scientific functions</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="weather">
+                        <div class="card-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>Weather</h3>
+                        <p>Current weather information</p>
+                        <div class="card-stats">
+                            <span>Real-time data</span>
+                        </div>
+                    </div>
+                    <div class="utility-card" data-section="qr">
+                        <div class="card-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>QR Generator</h3>
+                        <p>Generate QR codes instantly</p>
+                        <div class="card-stats">
+                            <span>Text to QR</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Meeting Scheduler Section -->
+            <section id="scheduler" class="section">
+                <div class="section-header">
+                    <h2>Meeting Scheduler</h2>
+                    <button class="btn btn-primary" id="addMeeting">
+                        <i class="fas fa-plus"></i> Add Meeting
+                    </button>
+                </div>
+                <div class="scheduler-content">
+                    <div class="calendar-view">
+                        <div class="calendar-header">
+                            <button id="prevMonth"><</button>
+                            <h3 id="currentMonth"></h3>
+                            <button id="nextMonth">></button>
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid"></div>
+                    </div>
+                    <div class="meetings-list">
+                        <h4>Upcoming Meetings</h4>
+                        <div id="meetingsList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Builder Section -->
+            <section id="resume" class="section">
+                <div class="section-header">
+                    <h2>Resume Builder</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="loadTemplate">Load Template</button>
+                        <button class="btn btn-primary" id="downloadResume">
+                            <i class="fas fa-download"></i> Download PDF
+                        </button>
+                    </div>
+                </div>
+                <div class="resume-builder">
+                    <div class="resume-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label>Professional Summary</label>
+                            <textarea id="summary" rows="4" placeholder="Brief professional summary..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Experience</label>
+                            <div id="experienceList"></div>
+                            <button type="button" class="btn btn-outline" id="addExperience">Add Experience</button>
+                        </div>
+                        <div class="form-group">
+                            <label>Skills</label>
+                            <input type="text" id="skills" placeholder="JavaScript, React, Node.js (comma separated)">
+                        </div>
+                    </div>
+                    <div class="resume-preview">
+                        <div class="preview-header">Preview</div>
+                        <div id="resumePreview" class="resume-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Markdown Converter Section -->
+            <section id="markdown" class="section">
+                <div class="section-header">
+                    <h2>Markdown to HTML Converter</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="clearMarkdown">Clear</button>
+                        <button class="btn btn-primary" id="copyHtml">
+                            <i class="fas fa-copy"></i> Copy HTML
+                        </button>
+                    </div>
+                </div>
+                <div class="markdown-converter">
+                    <div class="markdown-input">
+                        <h4>Markdown Input</h4>
+                        <textarea id="markdownText" placeholder="# Enter your markdown here...
+
+## Example
+- List item 1
+- List item 2
+
+**Bold text** and *italic text*
+
+```javascript
+console.log('Code block');
+```"></textarea>
+                    </div>
+                    <div class="html-output">
+                        <h4>HTML Preview</h4>
+                        <div id="htmlPreview" class="preview-content"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSV Viewer Section -->
+            <section id="csv" class="section">
+                <div class="section-header">
+                    <h2>CSV File Viewer</h2>
+                    <div class="header-actions">
+                        <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                        <button class="btn btn-secondary" onclick="document.getElementById('csvFile').click()">
+                            <i class="fas fa-upload"></i> Upload CSV
+                        </button>
+                        <button class="btn btn-primary" id="exportCsv">
+                            <i class="fas fa-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+                <div class="csv-viewer">
+                    <div class="csv-controls">
+                        <input type="text" id="csvSearch" placeholder="Search in data...">
+                        <select id="csvFilter">
+                            <option value="">All Columns</option>
+                        </select>
+                    </div>
+                    <div class="csv-table-container">
+                        <table id="csvTable" class="data-table">
+                            <thead></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mind Map Section -->
+            <section id="mindmap" class="section">
+                <div class="section-header">
+                    <h2>Mind Map Generator</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="clearMindMap">Clear</button>
+                        <button class="btn btn-primary" id="saveMindMap">
+                            <i class="fas fa-save"></i> Save
+                        </button>
+                    </div>
+                </div>
+                <div class="mindmap-container">
+                    <div class="mindmap-toolbar">
+                        <button class="btn btn-sm" id="addNode">
+                            <i class="fas fa-plus"></i> Add Node
+                        </button>
+                        <button class="btn btn-sm" id="addConnection">
+                            <i class="fas fa-link"></i> Connect
+                        </button>
+                        <input type="color" id="nodeColor" value="#4285f4">
+                    </div>
+                    <svg id="mindmapSvg" class="mindmap-canvas"></svg>
+                </div>
+            </section>
+
+            <!-- Code Snippets Section -->
+            <section id="snippets" class="section">
+                <div class="section-header">
+                    <h2>Code Snippet Manager</h2>
+                    <button class="btn btn-primary" id="addSnippet">
+                        <i class="fas fa-plus"></i> Add Snippet
+                    </button>
+                </div>
+                <div class="snippets-content">
+                    <div class="snippets-sidebar">
+                        <div class="search-box">
+                            <input type="text" id="snippetSearch" placeholder="Search snippets...">
+                        </div>
+                        <div class="tags-filter">
+                            <div id="tagsList"></div>
+                        </div>
+                        <div id="snippetsList" class="snippets-list"></div>
+                    </div>
+                    <div class="snippet-editor">
+                        <div class="editor-header">
+                            <input type="text" id="snippetTitle" placeholder="Snippet title...">
+                            <div class="editor-actions">
+                                <button class="btn btn-sm" id="copySnippet">
+                                    <i class="fas fa-copy"></i> Copy
+                                </button>
+                                <button class="btn btn-sm btn-primary" id="saveSnippet">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                        <div class="editor-meta">
+                            <select id="snippetLanguage">
+                                <option value="javascript">JavaScript</option>
+                                <option value="html">HTML</option>
+                                <option value="css">CSS</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="sql">SQL</option>
+                            </select>
+                            <input type="text" id="snippetTags" placeholder="Tags (comma separated)">
+                        </div>
+                        <textarea id="snippetCode" placeholder="Enter your code here..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Secure Notes Section -->
+            <section id="notes" class="section">
+                <div class="section-header">
+                    <h2>Secure Notes</h2>
+                    <button class="btn btn-primary" id="addNote">
+                        <i class="fas fa-plus"></i> Add Note
+                    </button>
+                </div>
+                <div class="notes-content">
+                    <div class="notes-list">
+                        <div id="notesList"></div>
+                    </div>
+                    <div class="note-editor">
+                        <div class="note-header">
+                            <input type="text" id="noteTitle" placeholder="Note title...">
+                            <div class="note-actions">
+                                <button class="btn btn-sm" id="lockNote">
+                                    <i class="fas fa-lock"></i> Lock
+                                </button>
+                                <button class="btn btn-sm btn-primary" id="saveNote">
+                                    <i class="fas fa-save"></i> Save
+                                </button>
+                            </div>
+                        </div>
+                        <textarea id="noteContent" placeholder="Your secure note content..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- JSON Tools Section -->
+            <section id="json" class="section">
+                <div class="section-header">
+                    <h2>JSON Beautifier & Validator</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="formatJson">
+                            <i class="fas fa-magic"></i> Format
+                        </button>
+                        <button class="btn btn-primary" id="validateJson">
+                            <i class="fas fa-check"></i> Validate
+                        </button>
+                    </div>
+                </div>
+                <div class="json-tools">
+                    <div class="json-input">
+                        <h4>JSON Input</h4>
+                        <textarea id="jsonInput" placeholder='{"example": "Enter your JSON here..."}'></textarea>
+                        <div id="jsonStatus" class="status-indicator"></div>
+                    </div>
+                    <div class="json-output">
+                        <h4>Formatted Output</h4>
+                        <pre id="jsonOutput"></pre>
+                        <button class="btn btn-sm" id="copyJsonOutput">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kanban Board Section -->
+            <section id="kanban" class="section">
+                <div class="section-header">
+                    <h2>Kanban Board</h2>
+                    <button class="btn btn-primary" id="addTask">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </div>
+                <div class="kanban-board">
+                    <div class="kanban-column" data-status="todo">
+                        <div class="column-header">
+                            <h3>To Do</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="todoColumn"></div>
+                    </div>
+                    <div class="kanban-column" data-status="inprogress">
+                        <div class="column-header">
+                            <h3>In Progress</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="inprogressColumn"></div>
+                    </div>
+                    <div class="kanban-column" data-status="done">
+                        <div class="column-header">
+                            <h3>Done</h3>
+                            <span class="task-count">0</span>
+                        </div>
+                        <div class="column-content" id="doneColumn"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Image Compressor Section -->
+            <section id="compressor" class="section">
+                <div class="section-header">
+                    <h2>Image Compressor</h2>
+                    <div class="header-actions">
+                        <input type="file" id="imageFile" accept="image/*" multiple style="display: none;">
+                        <button class="btn btn-secondary" onclick="document.getElementById('imageFile').click()">
+                            <i class="fas fa-upload"></i> Select Images
+                        </button>
+                    </div>
+                </div>
+                <div class="compressor-content">
+                    <div class="compression-settings">
+                        <div class="setting-group">
+                            <label>Quality: <span id="qualityValue">80</span>%</label>
+                            <input type="range" id="qualitySlider" min="10" max="100" value="80">
+                        </div>
+                        <div class="setting-group">
+                            <label>Max Width (px):</label>
+                            <input type="number" id="maxWidth" value="1920" min="100" max="4000">
+                        </div>
+                        <div class="setting-group">
+                            <label>Format:</label>
+                            <select id="outputFormat">
+                                <option value="jpeg">JPEG</option>
+                                <option value="png">PNG</option>
+                                <option value="webp">WebP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+            </section>
+
+            <!-- Dictionary Section -->
+            <section id="dictionary" class="section">
+                <div class="section-header">
+                    <h2>Dictionary</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="clearDictionary">Clear</button>
+                        <button class="btn btn-primary" id="speakWord">
+                            <i class="fas fa-volume-up"></i> Speak
+                        </button>
+                    </div>
+                </div>
+                <div class="dictionary-content">
+                    <div class="dictionary-search">
+                        <div class="search-box">
+                            <input type="text" id="wordSearch" placeholder="Enter a word to search...">
+                            <button class="btn btn-primary" id="searchWord">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="dictionary-result" id="dictionaryResult">
+                        <div class="welcome-message">
+                            <i class="fas fa-book"></i>
+                            <h3>Welcome to Dictionary</h3>
+                            <p>Enter a word above to get its definition, pronunciation, and examples.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Countries Section -->
+            <section id="countries" class="section">
+                <div class="section-header">
+                    <h2>Country Information</h2>
+                    <div class="header-actions">
+                        <select id="regionFilter">
+                            <option value="">All Regions</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Americas">Americas</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="countries-content">
+                    <div class="countries-search">
+                        <input type="text" id="countrySearch" placeholder="Search countries...">
+                    </div>
+                    <div class="countries-grid" id="countriesGrid">
+                        <div class="loading-message">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading country information...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculator Section -->
+            <section id="calculator" class="section">
+                <div class="section-header">
+                    <h2>Scientific Calculator</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="clearCalculator">Clear</button>
+                        <button class="btn btn-primary" id="toggleScientific">
+                            <i class="fas fa-cog"></i> Scientific
+                        </button>
+                    </div>
+                </div>
+                <div class="calculator-content">
+                    <div class="calculator-display">
+                        <input type="text" id="calculatorDisplay" readonly>
+                    </div>
+                    <div class="calculator-buttons" id="calculatorButtons">
+                        <!-- Basic Calculator Buttons -->
+                        <button class="calc-btn clear" onclick="clearCalculator()">C</button>
+                        <button class="calc-btn operator" onclick="deleteLast()">⌫</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('/')">/</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('*')">×</button>
+                        
+                        <button class="calc-btn number" onclick="appendToDisplay('7')">7</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('8')">8</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('9')">9</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('-')">-</button>
+                        
+                        <button class="calc-btn number" onclick="appendToDisplay('4')">4</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('5')">5</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('6')">6</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('+')">+</button>
+                        
+                        <button class="calc-btn number" onclick="appendToDisplay('1')">1</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('2')">2</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('3')">3</button>
+                        <button class="calc-btn equals" onclick="calculateResult()" rowspan="2">=</button>
+                        
+                        <button class="calc-btn number zero" onclick="appendToDisplay('0')">0</button>
+                        <button class="calc-btn number" onclick="appendToDisplay('.')">.</button>
+                    </div>
+                    <div class="scientific-buttons" id="scientificButtons" style="display: none;">
+                        <button class="calc-btn scientific" onclick="appendFunction('sin(')">sin</button>
+                        <button class="calc-btn scientific" onclick="appendFunction('cos(')">cos</button>
+                        <button class="calc-btn scientific" onclick="appendFunction('tan(')">tan</button>
+                        <button class="calc-btn scientific" onclick="appendFunction('log(')">log</button>
+                        <button class="calc-btn scientific" onclick="appendFunction('ln(')">ln</button>
+                        <button class="calc-btn scientific" onclick="appendToDisplay('**')">x^y</button>
+                        <button class="calc-btn scientific" onclick="appendFunction('sqrt(')">√</button>
+                        <button class="calc-btn scientific" onclick="appendToDisplay('3.14159')">π</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weather Section -->
+            <section id="weather" class="section">
+                <div class="section-header">
+                    <h2>Weather Information</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="getCurrentLocation">
+                            <i class="fas fa-location-arrow"></i> Current Location
+                        </button>
+                    </div>
+                </div>
+                <div class="weather-content">
+                    <div class="weather-search">
+                        <input type="text" id="citySearch" placeholder="Enter city name...">
+                        <button class="btn btn-primary" id="searchWeather">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                    <div class="weather-result" id="weatherResult">
+                        <div class="welcome-message">
+                            <i class="fas fa-cloud-sun"></i>
+                            <h3>Weather Information</h3>
+                            <p>Enter a city name or use your current location to get weather information.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- QR Generator Section -->
+            <section id="qr" class="section">
+                <div class="section-header">
+                    <h2>QR Code Generator</h2>
+                    <div class="header-actions">
+                        <button class="btn btn-secondary" id="clearQR">Clear</button>
+                        <button class="btn btn-primary" id="downloadQR">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="qr-content">
+                    <div class="qr-input">
+                        <div class="form-group">
+                            <label>Text or URL</label>
+                            <textarea id="qrText" placeholder="Enter text or URL to generate QR code..." rows="4"></textarea>
+                        </div>
+                        <div class="qr-options">
+                            <div class="form-group">
+                                <label>Size</label>
+                                <select id="qrSize">
+                                    <option value="200">200x200</option>
+                                    <option value="300" selected>300x300</option>
+                                    <option value="400">400x400</option>
+                                    <option value="500">500x500</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Color</label>
+                                <input type="color" id="qrColor" value="#000000">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="generateQR">
+                            <i class="fas fa-qrcode"></i> Generate QR Code
+                        </button>
+                    </div>
+                    <div class="qr-output">
+                        <div id="qrResult" class="qr-display">
+                            <div class="welcome-message">
+                                <i class="fas fa-qrcode"></i>
+                                <h3>QR Code Generator</h3>
+                                <p>Enter text or URL and click generate to create your QR code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="meetingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Meeting</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="meetingForm">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="meetingTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="meetingDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="meetingTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Timezone</label>
+                        <select id="meetingTimezone">
+                            <option value="UTC">UTC</option>
+                            <option value="America/New_York">Eastern Time</option>
+                            <option value="America/Chicago">Central Time</option>
+                            <option value="America/Denver">Mountain Time</option>
+                            <option value="America/Los_Angeles">Pacific Time</option>
+                            <option value="Europe/London">London</option>
+                            <option value="Europe/Paris">Paris</option>
+                            <option value="Asia/Tokyo">Tokyo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Duration (minutes)</label>
+                        <input type="number" id="meetingDuration" value="60" min="15" max="480">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="meetingDescription" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('meetingModal')">Cancel</button>
+                <button type="submit" form="meetingForm" class="btn btn-primary">Save Meeting</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Enter Password</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="passwordInput" placeholder="Enter password to unlock note">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('passwordModal')">Cancel</button>
+                <button type="button" class="btn btn-primary" id="unlockNote">Unlock</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
